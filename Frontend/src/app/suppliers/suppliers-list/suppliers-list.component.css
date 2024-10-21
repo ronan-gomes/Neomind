@@ -1,6 +1,12 @@
 table{
   width: 1200px;
 }
+th{
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 td{
   width: auto;
 }
@@ -13,3 +19,6 @@ td{
   overflow-y: auto;
 }
 
+btn-group me-2{
+  z-index: 0;
+}

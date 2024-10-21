@@ -8,19 +8,29 @@ import { SuppliersListComponent } from './suppliers/suppliers-list/suppliers-lis
 import { BtnHomeComponent } from './components/btn-home/btn-home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { SuppliersFormComponent } from './suppliers/suppliers-form/suppliers-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlertComponent } from './components/alert/alert.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SuppliersListComponent,
-    BtnHomeComponent
+    BtnHomeComponent,
+    SuppliersFormComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

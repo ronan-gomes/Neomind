@@ -1,0 +1,51 @@
+<form class="form" [formGroup]="form" *ngIf="!continue" form-control-lg >
+  <fieldset disabled>
+    <div class="mb-3">
+      <label for="id" class="form-label">Id</label>
+      <input
+        type="text"
+        id="id"
+        class="form-control"
+        formControlName="id"
+      />
+    </div>
+  </fieldset>
+  <div class="mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      formControlName="name"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" formControlName="email">
+  </div>
+  <div class="mb-3">
+    <label for="comment" class="form-label">Commentário</label>
+    <input
+      type="text"
+      class="form-control"
+      id="comment"
+      formControlName="comment"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="cnpj" class="form-label">Cnpj</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cnpj"
+      formControlName="cnpj"
+    />
+  </div>
+  <div *ngIf="form.invalid" class="alert alert-light" role="alert">
+    Os campos obrigatórios devem ser preenchidos.
+  </div>
+  <div>
+    <button type="button" class="btn btn-success" [disabled]="form.invalid" (click)="onSubmitForm(form)">Incluir</button>
+  </div>
+
+</form>

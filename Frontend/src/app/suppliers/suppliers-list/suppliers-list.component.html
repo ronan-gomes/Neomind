@@ -1,9 +1,9 @@
 <div class="tela">
   <div class="container">
-    <div class="container-table">
-      <table class="table">
+    <div class="container-table" *ngIf="suppliers; else spinner">
+      <table class="table table table-striped">
         <thead>
-          <tr>
+            <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
@@ -34,7 +34,12 @@
       </table>
     </div>
   </div>
-  <div class="buttons">
-    <button type="button" class="btn btn-success">Incluir</button>
+  <div class="buttons" *ngIf="suppliers; else spinner">
+    <button type="button" class="btn btn-success" (click)="openSupplierForm()">Incluir</button>
   </div>
+  <ng-template #spinner>
+    <div class="spinner-border text-secondary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </ng-template>
 </div>
