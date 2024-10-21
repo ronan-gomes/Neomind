@@ -3,10 +3,11 @@
     <div class="mb-3">
       <label for="id" class="form-label">Id</label>
       <input
-        type="text"
+        type="number"
         id="id"
         class="form-control"
         formControlName="id"
+        placeholder="{{id}}"
       />
     </div>
   </fieldset>
@@ -45,7 +46,8 @@
     Os campos obrigatórios devem ser preenchidos.
   </div>
   <div>
-    <button type="button" class="btn btn-success" [disabled]="form.invalid" (click)="onSubmitForm(form)">Incluir</button>
+    <button type="button" *ngIf="this.id" class="btn btn-success" [disabled]="form.invalid" (click)="onSubmitForm(form)">Alterar</button>
+    <button type="button" *ngIf="!this.id"  class="btn btn-success" [disabled]="form.invalid" (click)="onSubmitForm(form)">Incluir</button>
   </div>
 
 </form>

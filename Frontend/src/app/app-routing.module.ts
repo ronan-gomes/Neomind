@@ -8,7 +8,8 @@ import { SuppliersFormComponent } from './suppliers/suppliers-form/suppliers-for
 const routes: Routes = [
   {path: "", component: HomeComponent},
   {path: "list", component: SuppliersListComponent},
-  {path: "form", component: SuppliersFormComponent}
+  {path: "form", component: SuppliersFormComponent},
+  {path: "edit/:id", component: SuppliersFormComponent},
 ];
 
 @NgModule({

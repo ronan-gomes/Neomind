@@ -31,7 +31,7 @@ public class SupplierController {
         return repositorio.findAll();
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public Supplier alterar(@RequestBody Supplier supplier){
         if(supplier.getId()>0)
             return repositorio.save(supplier);

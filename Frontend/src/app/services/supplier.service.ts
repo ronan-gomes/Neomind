@@ -1,7 +1,8 @@
+import { Supplier } from './../suppliers/supplier';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, map } from 'rxjs';
-import { Supplier } from '../suppliers/supplier';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,24 @@ export class SupplierService {
   }
 
   save(supplier: Supplier){
-    console.log(supplier)
     return this.httpClient.post<Supplier>(this.url, supplier);
   }
 
-  error(e?: any): Observable<any>{
-    return e
+  listId(id: any): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/${id}`)
   }
+
+  // put(id: any): Observable<any> {
+  //   return this.httpClient.put(`${this.url}/${id}`, id)
+  // }
+
+  put(supplier: Supplier): Observable<Supplier>{
+    console.log('chegou no put')
+    return this.httpClient.put<Supplier>(`${this.url}`, supplier);
+}
+
+  // error(e?: any): Observable<any>{
+  //   return e
+  // }
 
 }
