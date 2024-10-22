@@ -24,10 +24,15 @@ Neste projeto pude testar e aprimorar conhecimentos em backend e frontend, utili
 
 ### Backend (RestAPI)
 
-1. Acesse o diretório `Neomind\restapi\src\main\java\com\neomind\restapi` pelo VSCode.
+1. Acesse o diretório 
+    ```bash
+        Neomind\restapi\src\main\java\com\neomind\restapi`
+    ```
 2. Execute o comando `Run` no arquivo `RestapiApplication.java`.
-3. O banco de dados será gerado automaticamente e api estará disponível no endereço `http://localhost:8080/suppliers`
-
+3. O banco de dados será gerado automaticamente e api estará disponível no endereço 
+    ```bash
+        http://localhost:8080/suppliers`
+    ```
 ## Contribuição
 
 Sinta-se à vontade para contribuir com melhorias ou correções para este projeto.
