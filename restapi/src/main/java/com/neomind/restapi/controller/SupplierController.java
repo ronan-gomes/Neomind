@@ -34,17 +34,18 @@ public class SupplierController {
     }
 
     @GetMapping("/{id}")
-        public Optional<Supplier> getUser(@PathVariable Integer id) {
+        public Optional<Supplier> listId(@PathVariable Integer id) {
        return repositorio.findById(id);
     }
 
-    @DeleteMapping
-    public String delete(@RequestBody Supplier supplier){
-        if(supplier.getId()>0){
-            repositorio.delete(supplier);
-            return "Excluído com sucesso!";
-        }
-        return "Não encontrado!";
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Integer id){
+       return repositorio.findById(id)
+            .map(recordFound ->{
+            repositorio.deleteById(id);
+            return ResponseEntity.noContent().<Void>build();
+        })
+        .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping

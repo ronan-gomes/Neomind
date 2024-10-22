@@ -25,4 +25,8 @@ export class SuppliersListComponent implements OnInit{
   onEdit(id: any){
     this.router.navigate(['edit', id]);
   }
+  onDelete(id: any){
+    this.router.navigate(['delete', id]);
+
+  }
 }

@@ -1,3 +1,4 @@
+import { SuppliersDeleteComponent } from './supplier/suppliers-delete/suppliers-delete.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path: "list", component: SuppliersListComponent},
   {path: "form", component: SuppliersFormComponent},
   {path: "edit/:id", component: SuppliersFormComponent},
+  {path: "delete/:id", component: SuppliersDeleteComponent},
 ];
 
 @NgModule({

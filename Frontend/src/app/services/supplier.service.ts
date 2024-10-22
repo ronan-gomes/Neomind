@@ -24,21 +24,13 @@ export class SupplierService {
     return this.httpClient.get<any>(`${this.url}/${id}`)
   }
 
-  // put(id: any): Observable<any> {
-  //   return this.httpClient.put(`${this.url}/${id}`, id)
-  // }
-
   put(id: any, body: any): Observable<Supplier>{
       return this.httpClient.put<any>(`${this.url}/${id}`, body);
   }
 
-  delete(id: any, body: any): Observable<Supplier>{
-    return this.httpClient.put<any>(`${this.url}/${id}`, body);
+  delete(id: any): Observable<any>{
+    console.log(id)
+    return this.httpClient.delete<any>(`${this.url}/${id}`,);
   }
-
-
-  // error(e?: any): Observable<any>{
-  //   return e
-  // }
 
 }

@@ -5,13 +5,12 @@ import { Supplier } from '../supplier';
 import { AlertService } from '../../services/alert.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-suppliers-form',
   templateUrl: './suppliers-form.component.html',
   styleUrl: './suppliers-form.component.css',
 })
-export class SuppliersFormComponent implements OnInit{
+export class SuppliersFormComponent implements OnInit {
   form!: FormGroup;
   name!: string;
   email!: string;
@@ -20,8 +19,9 @@ export class SuppliersFormComponent implements OnInit{
 
   continue: boolean = false;
   supplier!: Supplier;
-  edit = false
+  edit = false;
   id = this.route.snapshot.paramMap.get('id');
+  campoTexto: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,7 +30,7 @@ export class SuppliersFormComponent implements OnInit{
     private router: Router,
     private route: ActivatedRoute
   ) {
-      this.form = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.required]],
       comment: [null],
@@ -39,60 +39,64 @@ export class SuppliersFormComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    if(this.id){
+    if (this.id) {
       this.edit = true;
-      this.supplierService.listId(this.id).subscribe(supplier =>{
-        console.log(supplier)
-        this.form.patchValue(supplier)
-      })
+      this.supplierService.listId(this.id).subscribe((supplier) => {
+        this.form.patchValue(supplier);
+      });
     }
   }
 
   onSubmitForm(form: FormGroup): void {
-    console.log('onSubmitForm')
     this.name = form.value.name;
     this.email = form.value.email;
     this.comment = form.value.comment;
     this.cnpj = form.value.cnpj;
     this.continue = true;
 
-    if(Number(this.id) > 0){
+    if (Number(this.id) > 0) {
       this.callPut();
-    }else{
-      console.log('ENTROU NO POST')
+    } else {
       this.callPost();
     }
-
   }
 
   callPost() {
     this.supplierService.post(this.form.value).subscribe({
-      next: () => this.alertService.showAlert('Fornecedor cadastrado com sucesso','success',3000),
-      error: () => this.alertService.showAlert('Erro ao cadastrar fornecedor','danger',3000),
+      next: () =>
+        this.alertService.showAlert(
+          'Fornecedor cadastrado com sucesso',
+          'success',
+          3000
+        ),
+      error: () =>
+        this.alertService.showAlert(
+          'Erro ao cadastrar fornecedor',
+          'danger',
+          3000
+        ),
       complete: () => this.router.navigate(['list']),
-    })
-    console.log(this.supplier)
+    });
   }
 
-  callPut(){
-    console.log(this.form.value)
-    this.supplierService.put(this.id, this.form.value)
-    .subscribe({
-      next: () => this.alertService.showAlert('Fornecedor alterado com sucesso','success',3000),
-      error: () => this.alertService.showAlert('Erro ao alterar fornecedor','danger',3000),
+  callPut() {
+    this.supplierService.put(this.id, this.form.value).subscribe({
+      next: () =>
+        this.alertService.showAlert(
+          'Fornecedor alterado com sucesso',
+          'success',
+          3000
+        ),
+      error: () =>
+        this.alertService.showAlert(
+          'Erro ao alterar fornecedor',
+          'danger',
+          3000
+        ),
       complete: () => this.router.navigate(['list']),
-    })
-    console.log(this.supplier)
+    });
   }
 
-  finish(): void {
-    // this.supplier = {
-    //     name: string,
-    //     email: number;
-    //     comment: string;
-    //     cnpj: string;
-    // }
-  }
 }
 
 // function formatarcnpj(cnpj) {

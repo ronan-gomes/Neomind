@@ -12,6 +12,7 @@ import { SuppliersFormComponent } from './suppliers/suppliers-form/suppliers-for
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './components/alert/alert.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { SuppliersDeleteComponent } from './supplier/suppliers-delete/suppliers-delete.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     SuppliersListComponent,
     BtnHomeComponent,
     SuppliersFormComponent,
-    AlertComponent
+    AlertComponent,
+    SuppliersDeleteComponent
   ],
   imports: [
     BrowserModule,
