@@ -20,11 +20,13 @@ Neste projeto pude testar e aprimorar conhecimentos em backend e frontend, utili
     npm run start
     ```
    **Nota:** Não utilize o comando `ng serve`, pois ele não carrega a configuração de proxy definida desta forma não carregando os dados em tela.
+3. Após isso o frontend estará disponível no endereço `http://localhost:4200/`.
 
 ### Backend (RestAPI)
 
 1. Acesse o diretório `Neomind\restapi\src\main\java\com\neomind\restapi` pelo VSCode.
 2. Execute o comando `Run` no arquivo `RestapiApplication.java`.
+3. O banco de dados será gerado automaticamente e api estará disponível no endereço `http://localhost:8080/suppliers`
 
 ## Contribuição
 

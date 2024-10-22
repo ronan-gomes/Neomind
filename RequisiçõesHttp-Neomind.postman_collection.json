@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "ce068f4a-c4db-40cd-990e-73cff08555a5",
+		"name": "RequisiçõesHttp-Neomind",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37829705"
+	},
+	"item": [
+		{
+			"name": "GET-LIST",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/suppliers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"suppliers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/suppliers/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"suppliers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Meu Teste Postman\",\r\n    \"email\": \"meu@teste.com.br\",\r\n    \"comment\": \"teste\",\r\n    \"cnpj\": \"51.666.898/000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/suppliers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"suppliers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 9,\r\n    \"name\": \"Meu Teste Deu Boa\",\r\n    \"email\": \"meu@teste.com.br\",\r\n    \"comment\": \"teste\",\r\n    \"cnpj\": \"51.666.898/000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/suppliers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"suppliers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
