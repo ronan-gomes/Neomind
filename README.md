@@ -26,12 +26,12 @@ Neste projeto pude testar e aprimorar conhecimentos em backend e frontend, utili
 
 1. Acesse o diretório 
     ```bash
-        Neomind\restapi\src\main\java\com\neomind\restapi`
+        Neomind\restapi\src\main\java\com\neomind\restapi
     ```
 2. Execute o comando `Run` no arquivo `RestapiApplication.java`.
 3. O banco de dados será gerado automaticamente e api estará disponível no endereço 
     ```bash
-        http://localhost:8080/suppliers`
+        http://localhost:8080/suppliers
     ```
 ## Contribuição
 
