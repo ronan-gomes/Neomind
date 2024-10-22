@@ -20,8 +20,10 @@ Neste projeto pude testar e aprimorar conhecimentos em backend e frontend, utili
     npm run start
     ```
    **Nota:** Não utilize o comando `ng serve`, pois ele não carrega a configuração de proxy definida desta forma não carregando os dados em tela.
-3. Após isso o frontend estará disponível no endereço `http://localhost:4200/`.
-
+3. Após isso o frontend estará disponível no endereço:
+     ```bash
+        http://localhost:4200/
+     ```
 ### Backend (RestAPI)
 
 1. Acesse o diretório 
