@@ -53,14 +53,13 @@ public class SupplierController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity <Supplier> alterar(@PathVariable Integer id, 
-            @RequestBody Supplier supplier) {
+    public ResponseEntity <Supplier> alterar(@PathVariable Integer id, @RequestBody Supplier supplier) {
         return repositorio.findById(id)
             .map(recordFound ->{
-            recordFound.setName(null);
-            recordFound.setEmail(null);
-            recordFound.setComment(null);
-            recordFound.setCnpj(null);
+            recordFound.setName(supplier.getName());
+            recordFound.setEmail(supplier.getEmail());
+            recordFound.setComment(supplier.getComment());
+            recordFound.setCnpj(supplier.getCnpj());
             Supplier updated = repositorio.save(recordFound);
             return ResponseEntity.ok().body(updated);
         })

@@ -16,7 +16,7 @@ export class SupplierService {
     return this.httpClient.get<Supplier[]>(this.url)
   }
 
-  save(supplier: Supplier){
+  post(supplier: Supplier){
     return this.httpClient.post<Supplier>(this.url, supplier);
   }
 
@@ -28,10 +28,14 @@ export class SupplierService {
   //   return this.httpClient.put(`${this.url}/${id}`, id)
   // }
 
-  put(supplier: Supplier): Observable<Supplier>{
-    console.log('chegou no put')
-    return this.httpClient.put<Supplier>(`${this.url}`, supplier);
-}
+  put(id: any, body: any): Observable<Supplier>{
+      return this.httpClient.put<any>(`${this.url}/${id}`, body);
+  }
+
+  delete(id: any, body: any): Observable<Supplier>{
+    return this.httpClient.put<any>(`${this.url}/${id}`, body);
+  }
+
 
   // error(e?: any): Observable<any>{
   //   return e

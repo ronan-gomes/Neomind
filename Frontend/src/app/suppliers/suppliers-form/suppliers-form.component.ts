@@ -57,7 +57,6 @@ export class SuppliersFormComponent implements OnInit{
     this.continue = true;
 
     if(Number(this.id) > 0){
-      console.log('ENTROU NO PUT')
       this.callPut();
     }else{
       console.log('ENTROU NO POST')
@@ -67,7 +66,7 @@ export class SuppliersFormComponent implements OnInit{
   }
 
   callPost() {
-    this.supplierService.save(this.form.value).subscribe({
+    this.supplierService.post(this.form.value).subscribe({
       next: () => this.alertService.showAlert('Fornecedor cadastrado com sucesso','success',3000),
       error: () => this.alertService.showAlert('Erro ao cadastrar fornecedor','danger',3000),
       complete: () => this.router.navigate(['list']),
@@ -76,7 +75,9 @@ export class SuppliersFormComponent implements OnInit{
   }
 
   callPut(){
-    this.supplierService.put(this.form.value).subscribe({
+    console.log(this.form.value)
+    this.supplierService.put(this.id, this.form.value)
+    .subscribe({
       next: () => this.alertService.showAlert('Fornecedor alterado com sucesso','success',3000),
       error: () => this.alertService.showAlert('Erro ao alterar fornecedor','danger',3000),
       complete: () => this.router.navigate(['list']),
